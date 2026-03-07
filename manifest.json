@@ -1,0 +1,30 @@
+{
+  "name": "talon-pynput",
+  "title": "Pynput",
+  "description": "Add a description of your Talon package here.",
+  "version": "0.1.0",
+  "status": "experimental",
+  "namespace": "user.pynput",
+  "github": "",
+  "preview": "",
+  "author": "",
+  "tags": [],
+  "dependencies": {},
+  "devDependencies": {},
+  "contributes": {
+    "actions": [
+      "user.pynput_is_active",
+      "user.pynput_is_held",
+      "user.pynput_register",
+      "user.pynput_tests",
+      "user.pynput_unregister",
+      "user.pynput_version"
+    ]
+  },
+  "depends": {},
+  "_generator": "talon-pack",
+  "_generatorVersion": "3.0.0",
+  "_generatorRequiresVersionAction": true,
+  "_generatorStrictNamespace": true,
+  "_generatorFrozenFields": []
+}
