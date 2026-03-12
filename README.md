@@ -1,5 +1,5 @@
 ![Version](https://img.shields.io/badge/version-0.1.0-blue)
-![Status](https://img.shields.io/badge/status-experimental-orange)
+![Status](https://img.shields.io/badge/status-preview-orange)
 
 # talon-pynput
 
@@ -7,31 +7,36 @@
 
 pynput key listener for Talon. Register any key, combo, or sequence to trigger callbacks on a separate thread, so voice commands won't interrupt your input.
 
-## Setup
+## Installation
 
-### 1. Clone the repo
+### Dependencies
 
-```sh
-# mac and linux
-cd ~/.talon/user
+- [**pynput**](https://pypi.org/project/pynput/) (Python package)
 
-# windows
-cd ~/AppData/Roaming/talon/user
+### 1. Install Python Packages
 
-git clone https://github.com/rokubop/talon-pynput
-```
-
-### 2. Install pynput
+Install using Talon's bundled pip:
 
 ```sh
 # Windows
-~/AppData/Roaming/talon/venv/[version]/Scripts/pip install pynput
+~/AppData/Roaming/talon/venv/[VERSION]/Scripts/pip.bat install pynput
 
-# Mac
-~/.talon/venv/[version]/bin/pip install pynput
-
-# Linux
+# Linux/Mac
 ~/.talon/bin/pip install pynput
+```
+
+### 2. Clone Repositories
+
+Clone this repo into your [Talon](https://talonvoice.com/) user directory:
+
+```sh
+# Mac/Linux
+cd ~/.talon/user
+
+# Windows
+cd ~/AppData/Roaming/talon/user
+
+git clone https://github.com/rokubop/talon-pynput
 ```
 
 ## Usage
@@ -59,14 +64,29 @@ actions.user.pynput_register({
     "f23": (on_press_fn,),
 })
 
-# Unregister
+# Unregister (removes all registrations)
 actions.user.pynput_unregister("f22")
 actions.user.pynput_unregister(["f22", "f23"])
+
+# Unregister last (pops most recent, restores previous)
+actions.user.pynput_unregister_last("f22")
+actions.user.pynput_unregister_last(["f22", "f23"])
 
 # Query
 actions.user.pynput_is_held("f22")        # bool
 actions.user.pynput_is_held("ctrl-super") # True if both held
 actions.user.pynput_is_active()           # any listener running?
+```
+
+## Actions
+
+```
+user.pynput_register        Register key(s) with callbacks
+user.pynput_unregister      Remove all registrations for key(s)
+user.pynput_unregister_last Remove most recent registration (restores previous)
+user.pynput_is_held         Check if a key or combo is held down
+user.pynput_is_active       Check if any listener is running
+user.pynput_tests           Run tests in Talon REPL
 ```
 
 ## Example: foot pedals for a game
@@ -96,7 +116,7 @@ def on_mode_enabled():
     })
 
 def on_mode_disabled():
-    actions.user.pynput_unregister([PEDAL_LEFT, PEDAL_CENTER, PEDAL_RIGHT])
+    actions.user.pynput_unregister_last([PEDAL_LEFT, PEDAL_CENTER, PEDAL_RIGHT])
 ```
 
 ## Key syntax

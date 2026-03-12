@@ -1,16 +1,20 @@
 {
   "name": "talon-pynput",
   "title": "Pynput",
-  "description": "Add a description of your Talon package here.",
+  "description": "pynput key listener for Talon. Register any key, combo, or sequence to trigger callbacks on a separate thread, so voice commands won't interrupt your input.",
   "version": "0.1.0",
-  "status": "experimental",
+  "status": "preview",
   "namespace": "user.pynput",
-  "github": "",
-  "preview": "",
-  "author": "",
+  "github": "https://github.com/rokubop/talon-pynput",
+  "preview": "https://raw.githubusercontent.com/rokubop/talon-pynput/main/preview.svg",
+  "author": "Rokubop",
   "tags": [],
   "dependencies": {},
-  "devDependencies": {},
+  "pipDependencies": {
+    "pynput": {
+      "version": "*"
+    }
+  },
   "contributes": {
     "actions": [
       "user.pynput_is_active",
@@ -18,12 +22,13 @@
       "user.pynput_register",
       "user.pynput_tests",
       "user.pynput_unregister",
+      "user.pynput_unregister_last",
       "user.pynput_version"
     ]
   },
   "depends": {},
   "_generator": "talon-pack",
-  "_generatorVersion": "3.0.0",
+  "_generatorVersion": "3.3.0",
   "_generatorRequiresVersionAction": true,
   "_generatorStrictNamespace": true,
   "_generatorFrozenFields": []
