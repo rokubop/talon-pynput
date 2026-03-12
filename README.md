@@ -1,4 +1,4 @@
-![Version](https://img.shields.io/badge/version-0.1.0-blue)
+![Version](https://img.shields.io/badge/version-0.2.0-blue)
 ![Status](https://img.shields.io/badge/status-preview-orange)
 
 # talon-pynput

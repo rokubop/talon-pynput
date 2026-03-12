@@ -2,7 +2,7 @@
   "name": "talon-pynput",
   "title": "Pynput",
   "description": "pynput key listener for Talon. Register any key, combo, or sequence to trigger callbacks on a separate thread, so voice commands won't interrupt your input.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "status": "preview",
   "namespace": "user.pynput",
   "github": "https://github.com/rokubop/talon-pynput",
