@@ -165,3 +165,6 @@ Listeners start on first `pynput_register` and stop when all registrations are r
 ```py
 actions.user.pynput_tests()
 ```
+
+## More Talon packages
+Check out my other Talon packages for UI, mouse control, input mapping, and more at [talon-hub-roku](https://github.com/rokubop/talon-hub-roku).
